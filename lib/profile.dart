@@ -1,89 +1,119 @@
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class profilescreen extends StatelessWidget {
+  const profilescreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Container(
-          width: 300,
-          height: 350,
-          color: Colors.white,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 90,
-                height: 90,
-                decoration: const BoxDecoration(
-                  color: Colors.blue,
-                  shape: BoxShape.circle,
-                ),
-                child: const Center(
-                  child: Text(
-                    "AK",
-                    style: TextStyle(color: Colors.white, fontSize: 32),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 20),
-              const Text(
-                "Ali Khan",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 5),
-              const Text(
-                "Flutter developer",
-                style: TextStyle(color: Colors.grey, fontSize: 14),
-              ),
-              const SizedBox(height: 30),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Column(
-                    children: const [
-                      Text(
-                        "120",
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                      ),
-                      Text(
-                        "Posts",
-                        style: TextStyle(color: Colors.grey, fontSize: 12),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: const [
-                      Text(
-                        "3.2k",
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                      ),
-                      Text(
-                        "Followers",
-                        style: TextStyle(color: Colors.grey, fontSize: 12),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: const [
-                      Text(
-                        "180",
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                      ),
-                      Text(
-                        "Following",
-                        style: TextStyle(color: Colors.grey, fontSize: 12),
-                      ),
-                    ],
-                  ),
-                ],
-              )
-            ],
+      body: Stack(
+        children: [
+          Container(
+            height: 200,
+            color: Colors.deepPurpleAccent,
           ),
-        ),
+          Padding(
+            padding: const EdgeInsets.only(top: 250),
+            child: Column(
+              children: [
+                Text(
+                  "Syed Waleed",
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ), 
+                SizedBox(height: 20), 
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.location_on, color: Colors.grey, size: 16),
+                    Text(
+                      "Karachi, Pakistan",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: _detailedbox("120", "Posts"),
+                      ),
+                      SizedBox(width: 16),
+                      Expanded(
+                        child: _detailedbox("10k", "Followers"),
+                      ),
+                      SizedBox(width: 16),
+                      Expanded(
+                        child: _detailedbox("500", "Following"),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20),
+                
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20), 
+                  child: Container(
+                    height: 50,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurpleAccent,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Edit Profile",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ), 
+          
+          Positioned(
+            top: 130,
+            left: MediaQuery.of(context).size.width / 2 - 50,
+            child: Container(
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                color: Colors.teal,
+                shape: BoxShape.circle,
+              ), 
+              child: Icon(Icons.person, size: 50, color: Colors.white),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _detailedbox(String number, String label) {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 15),
+      decoration: BoxDecoration(
+        color: Colors.purple.shade50,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column( 
+        children: [
+          Text(number, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.deepPurple)),
+          Text(label, style: TextStyle(fontSize: 12, color: Colors.grey)),
+        ],
       ),
     );
   }
