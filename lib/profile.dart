@@ -7,7 +7,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.red,
-      body: SingleChildScrollView(
+      body: Container(
         child: Padding(
           padding: EdgeInsets.all(20),
           child: Column(
