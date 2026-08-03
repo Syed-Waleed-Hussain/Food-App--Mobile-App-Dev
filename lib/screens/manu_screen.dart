@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class manu_screen extends StatelessWidget {
-  const manu_screen({super.key});
+class ManuScreen extends StatelessWidget {
+  const ManuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

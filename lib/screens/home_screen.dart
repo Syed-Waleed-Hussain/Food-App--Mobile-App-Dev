@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../routes/app_routes.dart';
+import 'package:get/get_core/src/get_interface.dart';
 
-class home_screen extends StatelessWidget {
-  const home_screen({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +24,16 @@ class home_screen extends StatelessWidget {
               color: const Color.fromARGB(255, 209, 40, 96),
               margin: EdgeInsets.only(top: 20),
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/profile');
+                onPressed: (){
+                  Get.toNamed(
+                    AppRoutes.login,
+                  );
                 },
                 child: Text('Get Started'),
               ),
             )
-            
-          ],)
+          ],
+        )
       )
     );
   }
