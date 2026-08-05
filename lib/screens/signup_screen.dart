@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/utils/app_strings.dart';
+import 'package:get/get.dart';
+import '../routes/app_routes.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -32,7 +35,7 @@ class _SignupScreenState extends State<SignupScreen> {
               SizedBox(height: 20),
               
               Text(
-                "Create Account",
+                AppStrings.signup,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
@@ -46,8 +49,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  labelText: "Full Name",
-                  hintText: "Enter your name",
+                  labelText: AppStrings.fullname,
+                  hintText: AppStrings.fullnameHint,
                   prefixIcon: Icon(Icons.person, color: Colors.red),
                 ),
               ),
@@ -59,8 +62,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  labelText: "Email",
-                  hintText: "Enter Email",
+                  labelText: AppStrings.email,
+                  hintText: AppStrings.emailHint,
                   prefixIcon: Icon(Icons.email, color: Colors.red),
                 ),
               ),
@@ -72,8 +75,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  labelText: "Password",
-                  hintText: "Create Password",
+                  labelText: AppStrings.password,
+                  hintText: AppStrings.passwordHint,
                   prefixIcon: Icon(Icons.lock, color: Colors.red),
                 ),
               ),
@@ -90,11 +93,13 @@ class _SignupScreenState extends State<SignupScreen> {
                       borderRadius: BorderRadius.circular(20),
                     )
                   ),
-                  onPressed: () {
-                   
-                  },
-                  child: Text("Sign Up", style: TextStyle(color: Colors.white, fontSize: 18)),
-                ),
+                  onPressed: (){
+                  Get.toNamed(
+                    AppRoutes.signup,
+                  );
+                },
+                child: Text(AppStrings.signup, style: TextStyle(color: Colors.white, fontSize: 18)),
+              ),
               ),
             ],
           ),

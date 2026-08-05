@@ -4,6 +4,9 @@ import '../screens/home_screen.dart';
 import '../screens/cart_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/details_screen.dart';
+import '../screens/signup_screen.dart';
+
+import '../models/product.dart';
 import 'app_routes.dart';
 
 class AppPages {
@@ -11,9 +14,13 @@ class AppPages {
 
   static final pages = <GetPage>[
     GetPage(name: AppRoutes.login, page: () => const LoginScreen()),
+    GetPage(name: AppRoutes.signup, page: () => const SignupScreen()),
     GetPage(name: AppRoutes.home, page: () => const HomeScreen()),
     GetPage(name: AppRoutes.cart, page: () => const CartScreen()),
     GetPage(name: AppRoutes.profile, page: () => const ProfileScreen()),
-    GetPage(name: AppRoutes.productDetail, page: () => const DetailsScreen()),
+    GetPage(
+      name: AppRoutes.productDetail,
+      page: () => DetailsScreen(product: Get.arguments as Product),
+    ),
   ];
 }

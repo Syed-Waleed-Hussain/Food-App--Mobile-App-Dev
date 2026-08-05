@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../routes/app_routes.dart';
-import 'package:get/get_core/src/get_interface.dart';
+import 'package:foodapp/utils/app_strings.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
             Image.asset('assets/images/food-removebg-preview.png',width: 200,height:200,
             ),
             SizedBox(height: 20,),
-            Text('Enjoy your Meal!',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+            Text(AppStrings.enjoy,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
             Container(
               color: const Color.fromARGB(255, 209, 40, 96),
               margin: EdgeInsets.only(top: 20),
@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                     AppRoutes.login,
                   );
                 },
-                child: Text('Get Started'),
+                child: Text(AppStrings.getStarted),
               ),
             )
           ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
+import '../routes/app_routes.dart';
 import '../utils/app_strings.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -79,10 +80,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(20),
                   )
                 ),
-                onPressed: () {
-                
+                onPressed: (){
+                  Get.toNamed(
+                    AppRoutes.signup,
+                  );
                 },
-                child: Text(AppStrings.login, style: TextStyle(color: Colors.white, fontSize: 18)),
+                child: Text(AppStrings.signup, style: TextStyle(color: Colors.white, fontSize: 18)),
               ),
             ),
             SizedBox(height: 30),

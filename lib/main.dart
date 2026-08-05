@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'profile.dart';
-import 'setting_screen.dart';
-import 'home_screen.dart';
-import 'manu_screen.dart';
-import 'login_screen.dart';
-import 'signup_screen.dart';
+import 'routes/route_management.dart';
+import 'routes/app_routes.dart';
+import 'utils/app_strings.dart';
+import 'package:get/get.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -14,9 +12,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return GetMaterialApp(
+      title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
-      home: const ProfileScreen(), 
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: const Color(0xFF3A5BFF),
+        scaffoldBackgroundColor: const Color(0xFFF7F8FC),
+        fontFamily: 'Roboto',
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          foregroundColor: Colors.black87,
+          centerTitle: false,
+        ),
+      ),
+      
+      initialRoute: AppRoutes.productDetail,
+      getPages: AppPages.pages,
     );
   }
 }

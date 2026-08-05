@@ -9,6 +9,20 @@ class AppStrings{
   static const password = "Password";
   static const orlogin = "Or login with";
   static const login = "Login";
+  static const signup = "Sign Up";
+  static const fullname = "Full Name";
+  static const fullnameHint = "Enter your name";
+  static const enjoy = "Enjoy your Meal!";
+  static const getStarted = "Get Started";
+  static const profile = "Profile";
+  static const username = "Syed Waleed Hussain";
+  static const number = "+92 315 2593961";
+  static const emailAddress = "syedwaleedhussain11@gmail.com";
+  static const darkMode = "Dark Mode";
+  static const profileDetails = "Profile Details";
+  static const settings = "Settings";
+  static const logout = "Logout";
+
 
 }
 
