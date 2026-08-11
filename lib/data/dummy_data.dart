@@ -7,9 +7,9 @@ final List<Product> demoProducts = [
     category: 'Burgers',
     price: 89.99,
     rating: 4.6,
-    imageUrl: 'https://www.foodandwine.com/thmb/XE8ubzwObCIgMw7qJ9CsqUZocNM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/MSG-Smash-Burger-FT-RECIPE0124-d9682401f3554ef683e24311abdf342b.jpg',
+    imageUrl: 'assets/images/zinger-removebg-preview.png',
     description:
-        'So tasty burger you will like it. Made with fresh ingredients, juicy beef patty, and a special sauce that will leave you craving for more.',
+        'So tasty burger you will like it. Made with fresh ingredients, juicy crispy chicken patty, and special sauce.',
     isHot: true,
   ),
   const Product(
@@ -18,7 +18,7 @@ final List<Product> demoProducts = [
     category: 'Pizzas',
     price: 199.99,
     rating: 4.3,
-    imageUrl: 'https://img.magnific.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?semt=ais_test_b&w=740&q=80',
+    imageUrl: 'assets/images/pizza2-removebg-preview.png',
     description:
         'A classic Margherita pizza with fresh tomatoes, mozzarella cheese, and basil.',
   ),
@@ -28,8 +28,28 @@ final List<Product> demoProducts = [
     category: 'Tikkas',
     price: 149.99,
     rating: 4.8,
-    imageUrl: 'https://www.indianhealthyrecipes.com/wp-content/uploads/2022/03/chicken-tikka-recipe.jpg',
+    imageUrl: 'assets/images/tikka-removebg-preview.png',
     description:
         'Tender and flavorful chicken pieces marinated in a blend of spices and yogurt, then grilled to perfection.',
+  ),
+  const Product(
+    id: 'p4',
+    name: 'Beef Burger',
+    category: 'Burgers',
+    price: 99.99,
+    rating: 4.5,
+    imageUrl: 'assets/images/burger-removebg-preview.png',
+    description:
+        'Juicy beef patty grilled with fresh lettuce, onions, melted cheese, and signature sauce.',
+  ),
+  const Product(
+    id: 'p5',
+    name: 'Pizza Fries',
+    category: 'Fries',
+    price: 49.99,
+    rating: 4.7,
+    imageUrl: 'assets/images/fries-removebg-preview.png',
+    description:
+        'Crispy golden fries loaded with pizza sauce, melted mozzarella cheese, and olives.',
   ),
 ];

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../routes/app_routes.dart';
-import 'package:foodapp/utils/app_strings.dart';
+import '../utils/app_strings.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,32 +9,52 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.red.shade900,
-        height: double.infinity,
-        width: double.infinity,
+      backgroundColor: Colors.red.shade900,
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            Image.asset('assets/images/food-removebg-preview.png',width: 200,height:200,
-            ),
-            SizedBox(height: 20,),
-            Text(AppStrings.enjoy,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-            Container(
-              color: const Color.fromARGB(255, 209, 40, 96),
-              margin: EdgeInsets.only(top: 20),
-              child: ElevatedButton(
-                onPressed: (){
-                  Get.toNamed(
-                    AppRoutes.login,
-                  );
-                },
-                child: Text(AppStrings.getStarted),
+              Image.asset(
+                'assets/images/food-removebg-preview.png',
+                width: 220,
+                height: 220,
               ),
-            )
-          ],
-        )
-      )
+              const SizedBox(height: 30),
+              const Text(
+                AppStrings.enjoy,
+                style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 40),
+              SizedBox(
+                width: 200,
+                height: 50,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.red.shade900,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                  ),
+                  onPressed: () {
+                    Get.toNamed(AppRoutes.login);
+                  },
+                  child: const Text(
+                    AppStrings.getStarted,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

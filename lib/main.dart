@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'routes/route_management.dart';
-import 'routes/app_routes.dart';
-import 'utils/app_strings.dart';
 import 'package:get/get.dart';
+import 'routes/app_routes.dart';
+import 'routes/route_management.dart';
+import 'utils/app_strings.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -17,18 +18,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: const Color(0xFF3A5BFF),
-        scaffoldBackgroundColor: const Color(0xFFF7F8FC),
-        fontFamily: 'Roboto',
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          foregroundColor: Colors.black87,
-          centerTitle: false,
-        ),
+        colorSchemeSeed: Colors.red,
+        scaffoldBackgroundColor: Colors.white,
       ),
-      
-      initialRoute: AppRoutes.productDetail,
+      initialRoute: AppRoutes.home,
       getPages: AppPages.pages,
     );
   }

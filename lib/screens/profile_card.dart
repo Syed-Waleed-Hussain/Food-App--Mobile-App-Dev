@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ProfileCard extends StatelessWidget {
-  // Parameters for name and bio
   final String name;
   final String bio;
 
@@ -14,30 +13,30 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.lightBlue.shade50, // Bonus: Background color
-      margin: const EdgeInsets.all(10),
+      color: Colors.red.shade50,
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(16.0),
         child: Row(
           children: [
-            // Bonus: Rounded Image Placeholder
-            const CircleAvatar(
+            CircleAvatar(
               radius: 25,
-              child: Icon(Icons.person),
+              backgroundColor: Colors.red.shade100,
+              child: Icon(Icons.person, color: Colors.red.shade900),
             ),
             const SizedBox(width: 15),
-            // Text values display
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   name,
                   style: const TextStyle(
-                    fontSize: 18, 
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(bio),
+                const SizedBox(height: 4),
+                Text(bio, style: const TextStyle(color: Colors.black54)),
               ],
             ),
           ],

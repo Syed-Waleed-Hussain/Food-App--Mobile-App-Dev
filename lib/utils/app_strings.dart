@@ -1,96 +1,44 @@
-class AppStrings{
+class AppStrings {
   AppStrings._();
 
-  static const appName = "Food App";
-  static const emailHint = "Enter Email";
-  static const passwordHint = "Enter Password";
-  static const greet = "Welcome Back";
-  static const email = "Email";
-  static const password = "Password";
-  static const orlogin = "Or login with";
-  static const login = "Login";
-  static const signup = "Sign Up";
-  static const fullname = "Full Name";
-  static const fullnameHint = "Enter your name";
-  static const enjoy = "Enjoy your Meal!";
-  static const getStarted = "Get Started";
-  static const profile = "Profile";
-  static const username = "Syed Waleed Hussain";
-  static const number = "+92 315 2593961";
-  static const emailAddress = "syedwaleedhussain11@gmail.com";
-  static const darkMode = "Dark Mode";
-  static const profileDetails = "Profile Details";
-  static const settings = "Settings";
-  static const logout = "Logout";
+  static const String appName = "Food App";
+  static const String enjoy = "Enjoy your Meal!";
+  static const String getStarted = "Get Started";
+  static const String login = "Login";
+  static const String signup = "Sign Up";
+  static const String greet = "Welcome Back";
+  static const String email = "Email";
+  static const String emailHint = "Enter Email";
+  static const String password = "Password";
+  static const String passwordHint = "Enter Password";
+  static const String fullname = "Full Name";
+  static const String fullnameHint = "Enter your name";
+  static const String orlogin = "Or login with";
+  static const String alreadyHaveAccount = "Already have an account? Login";
+  static const String dontHaveAccount = "Don't have an account? Sign Up";
 
+  static const String menu = "Menu";
+  static const String search = "Search";
+  static const String searchHint = "Search food...";
+  static const String promotions = "Promotions";
+  static const String promoBanner = "Free Pizza Fries on orders above \$20";
+  static const String addToCart = "Add to Cart";
+  static const String addedToCart = "Item added to cart!";
+  static const String itemsInCart = "Items in Cart";
+  static const String instructions = "Instructions";
+  static const String checkout = "Check out";
+  static const String backToMenu = "Back to Menu";
+  static const String total = "Total";
 
+  static const String profile = "Profile";
+  static const String username = "Syed Waleed Hussain";
+  static const String number = "+92 315 2593961";
+  static const String emailAddress = "syedwaleedhussain11@gmail.com";
+  static const String darkMode = "Dark Mode";
+  static const String profileDetails = "Profile Details";
+  static const String settings = "Settings";
+  static const String logout = "Logout";
+
+  static const String listViewTitle = "Static ListView Demo";
+  static const String listBuilderTitle = "ListView.builder Demo";
 }
-
-
-
-
-//class AppStrings {
- // AppStrings._(); // prevent instantiation — this is a static-only class
-
-  // // ---- App ----
-  //static const appName = 'Sales App';
-  //  static const appName = "Sales App";
-  // // ---- Login page ----
-  // static const welcomeBack = 'Welcome back';
-  // static const loginSubtitle = 'Sign in to continue shopping deals made for you.';
-  // static const emailLabel = 'Email';
-  // static const emailHint = 'you@example.com';
-  // static const emailRequiredError = 'Email is required';
-  // static const emailInvalidError = 'Enter a valid email';
-  // static const passwordLabel = 'Password';
-  // static const passwordHint = 'Enter your password';
-  // static const passwordMinLengthError = 'Minimum 6 characters';
-  // static const forgotPassword = 'Forgot password?';
-  // static const logIn = 'Log In';
-  // static const noAccountPrompt = "Don't have an account?";
-  // static const signUp = 'Sign up';
-  // static const demoEmail = 'demo@salesapp.com';
-  // static const demoPassword = '123456';
-
-  // // ---- Home page ----
-  // static const greeting = 'Good afternoon 👋';
-  // static const findGreatDeals = 'Find great deals';
-  // static const searchHint = 'Search products...';
-  // static const noProductsFound = 'No products found';
-  // static const allCategory = 'All';
-  // static String addedToCart(String productName) => '$productName added to cart';
-
-  // // ---- Cart page ----
-  // static const myCart = 'My Cart';
-  // static const cartEmpty = 'Your cart is empty';
-  // static const subtotal = 'Subtotal';
-  // static const delivery = 'Delivery';
-  // static const total = 'Total';
-  // static const checkout = 'Checkout';
-  // static const orderPlaced = 'Order placed successfully 🎉';
-
-  // // ---- Profile page ----
-  // static const profile = 'Profile';
-  // static const demoUserName = 'Ayesha Khan';
-  // static const ordersLabel = 'Orders';
-  // static const wishlistLabel = 'Wishlist';
-  // static const reviewsLabel = 'Reviews';
-  // static const settings = 'Settings';
-  // static const orderHistory = 'Order History';
-  // static const shippingAddress = 'Shipping Address';
-  // static const paymentMethods = 'Payment Methods';
-  // static const notifications = 'Notifications';
-  // static const helpAndSupport = 'Help & Support';
-  // static const logOut = 'Log Out';
-
-  // // ---- Product detail page ----
-  // static const quantity = 'Quantity';
-  // static const description = 'Description';
-  // static const totalPrice = 'Total price';
-  // static const addToCart = 'Add to Cart';
-  // static String addedToCartWithQty(int qty, String productName) =>
-  //     '$qty x $productName added to cart';
-
-  // // ---- Product card ----
-  // static const hotBadge = 'HOT';
-//}

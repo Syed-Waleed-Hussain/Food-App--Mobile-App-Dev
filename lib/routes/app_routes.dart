@@ -1,11 +1,14 @@
 class AppRoutes {
-  AppRoutes._(); 
+  AppRoutes._();
 
-  static const login = '/login';
-  static const signup = '/signup';
-  static const home = '/home';
-  static const cart = '/cart';
-  static const profile = '/profile';
-  static const productDetail = '/product-detail';
-  
+  static const String home = '/home';
+  static const String login = '/login';
+  static const String signup = '/signup';
+  static const String menu = '/menu';
+  static const String cart = '/cart';
+  static const String profile = '/profile';
+  static const String settings = '/settings';
+  static const String productDetail = '/product-detail';
+  static const String listViewDemo = '/list-view-demo';
+  static const String listBuilderDemo = '/list-builder-demo';
 }

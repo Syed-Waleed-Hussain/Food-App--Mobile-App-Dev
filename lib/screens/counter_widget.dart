@@ -8,36 +8,43 @@ class CounterWidget extends StatefulWidget {
 }
 
 class _CounterWidgetState extends State<CounterWidget> {
-  // Simple integer variable to hold value
   int counter = 0;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Displaying current value
         Text(
           '$counter',
           style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 10),
-        // Plus and Minus buttons
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red.shade900,
+                foregroundColor: Colors.white,
+              ),
               onPressed: () {
-                setState(() {
-                  counter--; // Decrease counter
-                });
+                if (counter > 0) {
+                  setState(() {
+                    counter--;
+                  });
+                }
               },
               child: const Text('-'),
             ),
             const SizedBox(width: 20),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red.shade900,
+                foregroundColor: Colors.white,
+              ),
               onPressed: () {
                 setState(() {
-                  counter++; // Increase counter
+                  counter++;
                 });
               },
               child: const Text('+'),
