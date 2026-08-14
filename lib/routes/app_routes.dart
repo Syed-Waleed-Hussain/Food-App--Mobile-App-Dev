@@ -1,7 +1,8 @@
+/// Centralized named route string constants.
 class AppRoutes {
   AppRoutes._();
 
-  static const String home = '/home';
+  static const String home = '/';
   static const String login = '/login';
   static const String signup = '/signup';
   static const String menu = '/menu';
