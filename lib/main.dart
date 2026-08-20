@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'bindings/app_bindings.dart';
 import 'routes/app_routes.dart';
 import 'routes/route_generator.dart';
@@ -35,7 +36,7 @@ class FoodApp extends StatelessWidget {
       builder: (context, child) {
         final isDark = AppBindings.authController.isDarkMode;
 
-        return MaterialApp(
+        return GetMaterialApp(
           title: AppStrings.appName,
           debugShowCheckedModeBanner: false,
           themeMode: isDark ? ThemeMode.dark : ThemeMode.light,
