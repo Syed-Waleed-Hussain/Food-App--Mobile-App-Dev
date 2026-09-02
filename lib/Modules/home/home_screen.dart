@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'home_controller.dart';
 import '../../routes/app_routes.dart';
 import '../../utils/app_colors.dart';
 import '../../utils/app_strings.dart';
@@ -12,9 +14,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
-    return Scaffold(
+    return GetBuilder<HomeController>(
+      builder: (controller) {
+        final size = MediaQuery.of(context).size;
+        return Scaffold(
       backgroundColor: AppColors.primaryDark,
       body: Stack(
         children: [
@@ -241,6 +244,8 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+    );
+      },
     );
   }
 }

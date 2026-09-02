@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'profile_controller.dart';
 import '../../bindings/app_bindings.dart';
 import '../../routes/app_routes.dart';
 import '../../utils/app_colors.dart';
@@ -13,7 +15,9 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return GetBuilder<ProfileController>(
+      builder: (controller) {
+        return Scaffold(
       backgroundColor: AppColors.scaffoldBackground,
       appBar: const CustomAppBar(
         title: AppStrings.profile,
@@ -213,6 +217,8 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+      },
     );
   }
 

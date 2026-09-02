@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'cart_controller.dart';
 import '../../bindings/app_bindings.dart';
 import '../../models/cart_item_model.dart';
 import '../../routes/app_routes.dart';
@@ -20,8 +22,7 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
-  final TextEditingController _couponController = TextEditingController();
-  final TextEditingController _instructionsController = TextEditingController();
+  final controller = Get.find<CartModuleController>();
 
   @override
   void initState() {
@@ -31,13 +32,6 @@ class _CartScreenState extends State<CartScreen> {
         AppNotification.clear(context);
       }
     });
-  }
-
-  @override
-  void dispose() {
-    _couponController.dispose();
-    _instructionsController.dispose();
-    super.dispose();
   }
 
   void _showOrderSuccessDialog() {
@@ -209,7 +203,7 @@ class _CartScreenState extends State<CartScreen> {
                               ),
                               const SizedBox(height: 8),
                               TextField(
-                                controller: _instructionsController,
+                                controller: controller.instructionsController,
                                 decoration: const InputDecoration(
                                   hintText: "Special delivery or kitchen requests...",
                                   hintStyle: TextStyle(fontSize: 13, color: AppColors.textTertiary),
@@ -249,7 +243,7 @@ class _CartScreenState extends State<CartScreen> {
                                         borderRadius: AppStyles.roundedSmall,
                                       ),
                                       child: TextField(
-                                        controller: _couponController,
+                                        controller: controller.couponController,
                                         textCapitalization: TextCapitalization.characters,
                                         decoration: const InputDecoration(
                                           hintText: "Enter CHEF25",
@@ -269,7 +263,7 @@ class _CartScreenState extends State<CartScreen> {
                                       padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
                                     ),
                                     onPressed: () {
-                                      final success = cart.applyCoupon(_couponController.text);
+                                      final success = cart.applyCoupon(controller.couponController.text);
                                       AppNotification.showMessage(
                                         context,
                                         message: success
@@ -301,7 +295,7 @@ class _CartScreenState extends State<CartScreen> {
                                     GestureDetector(
                                       onTap: () {
                                         cart.removeCoupon();
-                                        _couponController.clear();
+                                        controller.couponController.clear();
                                       },
                                       child: const Text(
                                         "Remove",

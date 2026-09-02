@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import '../../bindings/app_bindings.dart';
 import '../../routes/app_routes.dart';
 import '../../utils/app_colors.dart';
-import '../../utils/app_notification.dart';
 import '../../utils/app_strings.dart';
 import '../../utils/app_styles.dart';
 import '../widgets/custom_button.dart';

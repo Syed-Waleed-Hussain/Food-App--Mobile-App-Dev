@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'signup_controller.dart';
 import '../../bindings/app_bindings.dart';
 import '../../routes/app_routes.dart';
 import '../../utils/app_colors.dart';
@@ -17,16 +19,13 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
-  final _formKey = GlobalKey<FormState>();
-  final _nameController = TextEditingController(text: "Syed Waleed Hussain");
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
+  final controller = Get.find<SignupController>();
+
   bool _obscurePassword = true;
 
   @override
   void initState() {
     super.initState();
-    // Clear any active notifications from previous screens so buttons are unblocked
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
         AppNotification.clear(context);
@@ -34,20 +33,12 @@ class _SignupScreenState extends State<SignupScreen> {
     });
   }
 
-  @override
-  void dispose() {
-    _nameController.dispose();
-    _emailController.dispose();
-    _passwordController.dispose();
-    super.dispose();
-  }
-
   void _handleSignup() {
-    if (_formKey.currentState?.validate() ?? false) {
+    if (controller.formKey.currentState?.validate() ?? false) {
       final success = AppBindings.authController.signup(
-        _nameController.text,
-        _emailController.text,
-        _passwordController.text,
+        controller.nameController.text,
+        controller.emailController.text,
+        controller.passwordController.text,
       );
       if (success) {
         Navigator.of(context).pushReplacementNamed(AppRoutes.menu);
@@ -72,7 +63,7 @@ class _SignupScreenState extends State<SignupScreen> {
           child: SingleChildScrollView(
             padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
             child: Form(
-              key: _formKey,
+              key: controller.formKey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -116,7 +107,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       children: [
                         // Full Name
                         CustomTextField(
-                          controller: _nameController,
+                          controller: controller.nameController,
                           labelText: AppStrings.fullname,
                           hintText: AppStrings.fullnameHint,
                           prefixIcon: Icons.badge_outlined,
@@ -132,7 +123,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
                         // Email Field
                         CustomTextField(
-                          controller: _emailController,
+                          controller: controller.emailController,
                           labelText: AppStrings.email,
                           hintText: AppStrings.emailHint,
                           prefixIcon: Icons.email_outlined,
@@ -152,7 +143,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
                         // Password Field
                         CustomTextField(
-                          controller: _passwordController,
+                          controller: controller.passwordController,
                           labelText: AppStrings.password,
                           hintText: AppStrings.passwordHint,
                           prefixIcon: Icons.lock_outline,
