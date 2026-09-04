@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../models/cart_item_model.dart';
 import '../models/product_model.dart';
 
-/// Pure Flutter ChangeNotifier managing shopping cart state and financial calculations.
-/// Avoids all third-party state managers like GetX.
 class CartController extends ChangeNotifier {
   final List<CartItem> _items = [];
   String _appliedCoupon = '';
@@ -16,9 +14,8 @@ class CartController extends ChangeNotifier {
   bool get isEmpty => _items.isEmpty;
   String get appliedCoupon => _appliedCoupon;
 
-  /// Adds a product to the cart with specified quantity and addons.
   void addToCart(Product product, {int quantity = 1, List<String> addons = const [], String note = ''}) {
-    // Check if the same product with the same addons already exists
+   
     final existingIndex = _items.indexWhere(
       (item) => item.product.id == product.id && _areAddonsEqual(item.selectedAddons, addons),
     );
@@ -36,7 +33,6 @@ class CartController extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Increments quantity for a specific cart index.
   void incrementQuantity(int index) {
     if (index >= 0 && index < _items.length) {
       _items[index].quantity++;
@@ -44,7 +40,6 @@ class CartController extends ChangeNotifier {
     }
   }
 
-  /// Decrements quantity or removes the item if quantity drops to zero.
   void decrementQuantity(int index) {
     if (index >= 0 && index < _items.length) {
       if (_items[index].quantity > 1) {
@@ -56,7 +51,6 @@ class CartController extends ChangeNotifier {
     }
   }
 
-  /// Removes an item directly from the cart.
   void removeItem(int index) {
     if (index >= 0 && index < _items.length) {
       _items.removeAt(index);
@@ -64,7 +58,6 @@ class CartController extends ChangeNotifier {
     }
   }
 
-  /// Clears the entire cart on checkout.
   void clearCart() {
     _items.clear();
     _appliedCoupon = '';
@@ -72,7 +65,6 @@ class CartController extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Applies a promo code. Returns true if valid.
   bool applyCoupon(String code) {
     final trimmed = code.trim().toUpperCase();
     if (trimmed == 'CHEF25' || trimmed == 'GOURMET25') {
