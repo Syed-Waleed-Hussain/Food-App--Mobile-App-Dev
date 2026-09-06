@@ -2,8 +2,6 @@ import '../data_dummy/dummy_data.dart';
 import '../models/category_model.dart';
 import '../models/product_model.dart';
 
-/// Simple repository for retrieving food products, categories, and promotions
-/// without any external backend dependencies or prohibited complex frameworks.
 class FoodRepository {
   const FoodRepository();
 
