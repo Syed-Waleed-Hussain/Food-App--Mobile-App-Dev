@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Represents a menu food category with presentation metadata.
 class CategoryModel {
   final String id;
   final String name;
