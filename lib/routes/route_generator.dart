@@ -20,9 +20,6 @@ import '../Modules/settings/settings_screen.dart';
 import '../data_dummy/dummy_data.dart';
 import '../models/product_model.dart';
 import 'app_routes.dart';
-
-/// Standard Flutter onGenerateRoute handler managing route navigation,
-/// module binding dependencies, argument extraction, and smooth transitions.
 class RouteGenerator {
   RouteGenerator._();
 
