@@ -8,7 +8,6 @@ class AppStrings {
   static const String enjoy = "Craving something extraordinary?";
   static const String heroSubtitle = "Discover chef-curated gourmet meals made with farm-fresh ingredients.";
   static const String getStarted = "Explore Menu";
-
   // Authentication
   static const String login = "Sign In";
   static const String signup = "Create Account";
