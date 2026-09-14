@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../models/category_model.dart';
 import '../models/product_model.dart';
 
-/// Centralized repository of mock culinary products and category taxonomies.
 class DummyData {
   DummyData._();
 
