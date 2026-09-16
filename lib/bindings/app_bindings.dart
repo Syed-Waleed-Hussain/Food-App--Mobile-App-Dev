@@ -2,8 +2,6 @@ import '../controllers/auth_controller.dart';
 import '../controllers/cart_controller.dart';
 import '../repo/food_repository.dart';
 
-/// Clean, lightweight service locator / bindings container.
-/// Provides centralized access to repositories and controllers without using GetX or external packages.
 class AppBindings {
   AppBindings._();
 
