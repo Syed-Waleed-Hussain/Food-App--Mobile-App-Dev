@@ -5,12 +5,10 @@ import '../models/product_model.dart';
 class FoodRepository {
   const FoodRepository();
 
-  /// Returns all available products.
   List<Product> getAllProducts() {
     return List.unmodifiable(DummyData.products);
   }
 
-  /// Returns products marked as popular for the menu showcase.
   List<Product> getPopularProducts() {
     return DummyData.products.where((p) => p.isPopular).toList();
   }
