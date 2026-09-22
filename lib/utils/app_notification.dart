@@ -3,13 +3,9 @@ import '../routes/app_routes.dart';
 import 'app_colors.dart';
 import 'app_styles.dart';
 
-/// Global non-blocking notification & snackbar manager.
-/// Ensures toasts never obscure primary CTA buttons, support swipe-to-dismiss,
-/// and provide responsive "View Cart" touch targets.
 class AppNotification {
   AppNotification._();
 
-  /// Displays an elevated, dismissible order confirmation banner that never blocks bottom buttons.
   static void showOrderAdded(
     BuildContext context, {
     required String itemName,
