@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
-/// Centralized design typography, dimensions, and sophisticated elevation styles
-/// built with double layered box-shadows and clean border radii.
 class AppStyles {
   AppStyles._();
 
