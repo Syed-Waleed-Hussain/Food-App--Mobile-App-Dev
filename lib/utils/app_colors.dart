@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Centralized application color palette designed for high aesthetic contrast,
-/// visual warmth, and modern glassmorphic/neumorphic elegance.
 class AppColors {
   AppColors._();
 
