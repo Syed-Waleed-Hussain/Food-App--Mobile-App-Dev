@@ -39,7 +39,6 @@ class CartController extends ChangeNotifier {
       notifyListeners();
     }
   }
-
   void decrementQuantity(int index) {
     if (index >= 0 && index < _items.length) {
       if (_items[index].quantity > 1) {
